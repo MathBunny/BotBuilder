@@ -11,7 +11,12 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var IntentRecognizer_1 = require("./IntentRecognizer");
-var request = require("request");
+var _request = require("request");
+var request = _request.defaults({
+    proxy: 'http://proxy.bloomberg.com:80',
+    strictSSL: false,
+    ca: null
+});
 var url = require("url");
 var LuisRecognizer = (function (_super) {
     __extends(LuisRecognizer, _super);
